@@ -2,7 +2,7 @@ import Link from "next/link";
 import { client } from "@/sanity/lib/client";
 
 export const metadata = {
-  title: "thesgn - Blog's ",
+  title: "thesgn - Blog's",
   description: "Read articles on software development, AI, cloud, and more.",
 };
 
@@ -94,6 +94,31 @@ export default async function BlogPage({ searchParams }) {
             </Link>
           ))}
         </div>
+
+        {/* ⭐ STEP 7: Breadcrumb JSON-LD for Blog Listing */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://www.thesgn.blog",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Blog",
+                  item: "https://www.thesgn.blog/blog",
+                },
+              ],
+            }),
+          }}
+        />
       </div>
     </div>
   );

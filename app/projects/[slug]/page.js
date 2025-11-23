@@ -1,6 +1,46 @@
 // app/projects/[slug]/page.js
 import { projects } from "../projectsData";
 
+// ⭐ SEO Function
+export async function generateMetadata({ params }) {
+  const { slug } = await Promise.resolve(params);
+  const project = projects.find((p) => p.slug === slug);
+
+  if (!project) {
+    return {
+      title: "Project Not Found — thesgn",
+      description: "The requested project does not exist.",
+    };
+  }
+
+  return {
+    title: `${project.title} — thesgn`,
+    description: project.description,
+
+    // SEO Keywords (optional)
+    keywords: project.tags,
+
+    openGraph: {
+      title: `${project.title} — thesgn`,
+      description: project.description,
+      url: `https://www.thesgn.blog/projects/${project.slug}`,
+      type: "article",
+      images: [
+        {
+          url: "/default-og.png", // You can replace this with your OG image
+          width: 1200,
+          height: 630,
+          alt: project.title,
+        },
+      ],
+    },
+
+    alternates: {
+      canonical: `https://www.thesgn.blog/projects/${project.slug}`,
+    },
+  };
+}
+
 export default async function ProjectDetails({ params }) {
   // FIX for Next.js 16 + Turbopack Promise params bug
   const { slug } = await Promise.resolve(params);
