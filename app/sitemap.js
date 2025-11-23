@@ -33,6 +33,9 @@ export default async function sitemap() {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
     },
-    ...blogUrls,
+    {
+      url: `$https://www.thesgn.blog/blog/are-we-in-an-ai-bubble-nov-2025`,
+      lastModified: new Date(),
+    },
   ];
 }

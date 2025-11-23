@@ -1,5 +1,6 @@
 import { client } from "@/sanity/lib/client";
 import { PortableText } from "@portabletext/react";
+import { PortableTextComponents } from "@/app/components/PortableTextComponents";
 
 // -------------------------------------------------
 // STEP 4: ADD SEO METADATA
@@ -7,7 +8,6 @@ import { PortableText } from "@portabletext/react";
 export async function generateMetadata({ params }) {
   const { slug } = await Promise.resolve(params);
 
-  // Fetch post + SEO fields
   const query = `
     *[_type == "post" && slug.current == $slug][0]{
       title,
@@ -38,7 +38,6 @@ export async function generateMetadata({ params }) {
     title: post.seo?.metaTitle || `${post.title} — thesgn`,
     description: post.seo?.metaDescription || post.excerpt || "",
     keywords: post.seo?.keywords || [],
-
     robots: { index: true, follow: true },
 
     openGraph: {
@@ -71,7 +70,7 @@ export async function generateMetadata({ params }) {
 }
 
 // -------------------------------------------------
-// STATIC PARAMS FOR SSG
+// STATIC PARAMS (SSG)
 // -------------------------------------------------
 export async function generateStaticParams() {
   const slugs = await client.fetch(`
@@ -82,24 +81,26 @@ export async function generateStaticParams() {
 }
 
 // -------------------------------------------------
-// BLOG POST PAGE (YOUR UI + JSON-LD)
+// BLOG POST PAGE + FIXED INLINE IMAGES
 // -------------------------------------------------
 export default async function BlogPostPage({ params }) {
   const { slug } = await Promise.resolve(params);
-
-  if (!slug) {
-    return <p className="text-gray-400 text-center py-20">Invalid slug.</p>;
-  }
 
   const query = `
     *[_type == "post" && slug.current == $slug][0]{
       title,
       publishedAt,
-      body,
       "imageUrl": mainImage.asset->url,
       seo {
         metaDescription,
         "ogImageUrl": ogImage.asset->url
+      },
+      body[]{
+        ...,
+        _type == "image" => {
+          ...,
+          "url": asset->url
+        }
       }
     }
   `;
@@ -126,8 +127,7 @@ export default async function BlogPostPage({ params }) {
         />
       )}
 
-      {/* ⭐ STEP 5: JSON-LD STRUCTURED DATA */}
-      {/* ⭐ STEP 7: Breadcrumb JSON-LD */}
+      {/* ⭐ Breadcrumb JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -158,7 +158,7 @@ export default async function BlogPostPage({ params }) {
         }}
       />
 
-      <PortableText value={post.body} />
+      <PortableText value={post.body} components={PortableTextComponents} />
     </article>
   );
 }
