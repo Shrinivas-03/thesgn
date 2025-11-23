@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Branding */}
           <div>
             <h3 className="text-xl font-semibold text-white">
-              Prabhu Kiran Konda
+              Shrinivas Gopal Nadager
             </h3>
             <p className="text-sm text-gray-400">
               Developer • AI • Cloud • Full-Stack
@@ -66,7 +66,7 @@ export default function Footer() {
 
         {/* Divider */}
         <div className="border-t border-slate-800 mt-10 pt-4 text-center text-gray-500 text-sm">
-          © {new Date().getFullYear()} Prabhu Kiran. All rights reserved.
+          © {new Date().getFullYear()} SGN. All rights reserved.
         </div>
       </div>
     </footer>

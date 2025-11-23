@@ -10,8 +10,11 @@ const geist = Geist({
 });
 
 export const metadata = {
-  title: "Buddy Portfolio",
-  description: "Portfolio + Blog by Buddy",
+  title: "Shrinivas Nadager",
+  description: "Portfolio + Blogs",
+  icons: {
+    icon: "/me.png",
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -13,7 +13,9 @@ export default function AboutPage() {
 
           <p className="text-gray-300 text-lg leading-relaxed">
             I'm{" "}
-            <span className="text-white font-semibold">Prabhu Kiran Konda</span>
+            <span className="text-white font-semibold">
+              Shrinivas Gopal Nadager
+            </span>
             , founder of Codemates Ltd, and a passionate developer experienced
             in web apps, AI systems, cloud computing, and building solutions
             that matter.
@@ -42,29 +44,42 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             {
-              title: "Programming",
-              items: ["Python", "JavaScript", "TypeScript", "C", "C++", "SQL"],
+              title: "Languages",
+              items: ["Python", "HTML", "CSS", "SQL"],
             },
             {
-              title: "AI & ML",
+              title: "Framework",
+              items: ["Flask", "FastAPI", "Streamlit", "Tailwind CSS"],
+            },
+            {
+              title: "Developer Tools",
               items: [
-                "Deep Learning",
-                "RAG Systems",
-                "LLMs",
-                "Computer Vision",
+                "Git",
+                "GitHub",
+                "VS Code",
+                "PowerBi",
+                "Render.com",
+                "Postman",
               ],
             },
             {
-              title: "Web Development",
-              items: ["Next.js", "React", "Tailwind CSS", "Node.js"],
+              title: "Libraries",
+              items: [
+                "Pandas",
+                "Numpy",
+                "Matplotlib",
+                "Seaborn",
+                "Scikit-Learn",
+                "Hugging Face Transformers",
+              ],
             },
             {
-              title: "Cloud & DevOps",
-              items: ["Azure", "AWS", "Docker", "CI/CD Pipelines"],
-            },
-            {
-              title: "Tools",
-              items: ["Git & GitHub", "Supabase", "Sanity CMS", "Postman"],
+              title: "Core Skills",
+              items: [
+                "Data Structures and Algorithms",
+                "Object-Oriented Programming (OOP's)",
+                "Computer Networks",
+              ],
             },
           ].map((skill, i) => (
             <div
@@ -92,21 +107,10 @@ export default function AboutPage() {
         <div className="space-y-8 border-l border-slate-700 pl-6">
           <div data-aos="fade-up">
             <h3 className="text-xl font-semibold">Founder — Codemates Ltd</h3>
-            <p className="text-gray-400 text-sm">2024 – Present</p>
+            <p className="text-gray-400 text-sm">2025 – Present</p>
             <p className="text-gray-300 mt-1">
               Running a tech agency building modern websites, AI tools,
               automation, and full-stack solutions.
-            </p>
-          </div>
-
-          <div data-aos="fade-up">
-            <h3 className="text-xl font-semibold">
-              Software Engineer Projects
-            </h3>
-            <p className="text-gray-400 text-sm">2023 – 2025</p>
-            <p className="text-gray-300 mt-1">
-              Worked on cloud architecture, ML models, mobile apps, automation,
-              and APIs.
             </p>
           </div>
         </div>

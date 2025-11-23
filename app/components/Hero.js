@@ -24,7 +24,8 @@ export default function Hero() {
           </h1>
 
           <p className="text-gray-300 text-lg md:max-w-lg">
-            Welcome to my blog — here I share everything that I love.
+            Welcome to my portfolio and blog — here I share everything that I
+            love.
           </p>
 
           <a

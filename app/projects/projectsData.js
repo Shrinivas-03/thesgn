@@ -1,88 +1,102 @@
+// app/projects/projectsData.js
+
 export const projects = [
   {
-    slug: "snajeevani-ai",
-    title: "AI Health Assistant (Snajeevani AI)",
+    slug: "sanjeevani-ai",
+    title: "Sanjeevani AI — Smart Health Companion",
     description:
-      "AI-powered RAG health assistant using Flask, ML, Pinecone, LLMs and Ayurvedic knowledgebase.",
-    longDescription: `
-Snajeevani AI is a healthcare assistant powered by RAG + Ayurvedic knowledgebase.
-
-Features include:
-- Symptoms-to-disease prediction
-- ML + XGBoost model
-- Pinecone vector search
-- LLM reasoning
-- Flask backend
-- Clean UI
-
-This system is designed to help provide fast and secure health advice.
-    `,
-    tags: ["AI", "RAG", "ML", "Flask", "Pinecone"],
-    image: "/projects/project1.jpg",
+      "AI-powered healthcare assistant offering disease prediction, Ayurvedic wellness recommendations, and real-time health insights.",
+    longDescription: [
+      "Sanjeevani AI is an advanced health companion designed to deliver fast, accessible, and personalized healthcare insights.",
+      "",
+      "Key Features:",
+      "- Symptom-based disease prediction using TensorFlow/PyTorch",
+      "- Ayurvedic wellness recommendations using a curated knowledgebase",
+      "- ML + NLP pipelines using scikit-learn & Hugging Face Transformers",
+      "- Real-time conversational chatbot for health queries",
+      "- Flask backend with secure Supabase health record storage",
+      "- OpenAI API for intelligent recommendations",
+      "- Google Analytics for user behavior and engagement tracking",
+      "",
+      "Designed as an open-source solution aimed at democratizing healthcare access.",
+    ].join("\n"),
+    tags: [
+      "AI",
+      "ML",
+      "NLP",
+      "Flask",
+      "Supabase",
+      "Transformers",
+      "TensorFlow",
+      "PyTorch",
+    ],
     link: "https://github.com/yourrepo",
     demo: "#",
   },
 
   {
-    slug: "ovarian-cancer-system",
-    title: "Ovarian Cancer Prediction System",
+    slug: "kisansetu-f2c-marketplace",
+    title: "KisanSetu — Farmer-to-Customer Marketplace",
     description:
-      "Machine learning–based cancer prediction using XGBoost + LLM validation.",
-    longDescription: `
-This ML app predicts ovarian cancer risk based on clinical biomarkers.
-
-Includes:
-- Preprocessing
-- XGBoost model
-- LLM-powered explanation
-- Biomarker score analysis
-- Flask + Next.js integration
-    `,
-    tags: ["ML", "XGBoost", "Python", "Healthcare"],
-    image: "/projects/project2.png",
+      "A direct farm-to-table platform improving farmer profits and reducing consumer costs through real-time inventory and multi-role authentication.",
+    longDescription: [
+      "KisanSetu is a digital marketplace that connects farmers directly with customers, eliminating middlemen and ensuring fair pricing.",
+      "",
+      "Core Capabilities:",
+      "- Multi-role login for farmers, customers, and admins",
+      "- Admin dashboard with full product & user management",
+      "- Real-time inventory updates using Supabase",
+      "- Cart and checkout system with Flask backend",
+      "- Responsive UI built with Tailwind CSS",
+      "- Deployed on Render.com with 99.5% uptime during peak seasons",
+      "- Google Analytics-driven UX improvements increased conversion by 25%",
+      "- Roadmap includes payment gateway and logistics API integration",
+    ].join("\n"),
+    tags: ["Flask", "Supabase", "Marketplace", "Tailwind", "Render.com"],
     link: "https://github.com/yourrepo",
     demo: "#",
   },
 
   {
-    slug: "codemates-website",
-    title: "Codemates Ltd Website",
+    slug: "yukti-2025-fest-website",
+    title: "Yukti 2025 — College Fest Website",
     description:
-      "Business website with SEO, bookings, admin panel, and chatbot integration.",
-    longDescription: `
-Codemates Ltd official business website with:
-
-- Carousel landing page
-- SEO optimization
-- Admin dashboard
-- Booking system
-- Chatbot integration
-- Tailwind UI
-- Hosted on Vercel
-    `,
-    tags: ["Next.js", "Tailwind", "Flask", "Supabase"],
-    image: "/projects/project3.png",
+      "High-performance college fest website managing 680+ registrations and 100,000+ views with secure Flask backend and Supabase.",
+    longDescription: [
+      "Built the official Yukti 2025 college fest website enabling smooth event registrations, sponsor management, and guest coordination.",
+      "",
+      "Highlights:",
+      "- Handled over 680+ registrations and 100,000+ views",
+      "- Dynamic event registration and sponsorship portal",
+      "- Guest management system built using Flask + Supabase",
+      "- Google Analytics for tracking engagement",
+      "- Led to 200% increase in registration revenue",
+      "- Deployed on Render.com with 99.9% uptime for 1,000+ participants",
+      "- Built with responsive Tailwind CSS UI for flawless cross-device experience",
+    ].join("\n"),
+    tags: ["Flask", "Supabase", "Tailwind", "Render.com", "Analytics"],
     link: "https://github.com/yourrepo",
-    demo: "https://codemates.in",
+    demo: "https://yukti.vtucpgsklb.in",
   },
 
   {
-    slug: "drone-weed-detection",
-    title: "Drone Weed Detection",
+    slug: "ai-news-web-app",
+    title: "AI-Based News Web App",
     description:
-      "CNN/Vision Transformer model for weed detection using drone/satellite images.",
-    longDescription: `
-Detects weeds in farmland using drone/satellite imagery.
-
-Pipeline includes:
-- Image collection (Sentinel-2, drones)
-- CNN + ViT
-- Data cleaning & augmentation
-- PyTorch training
-- Deployment via FastAPI
-    `,
-    tags: ["CNN", "PyTorch", "Satellite Data"],
-    image: "/projects/project4.jpg",
+      "Real-time news summarizer using transformer-based NLP models with OTP authentication and personalized bookmarking.",
+    longDescription: [
+      "This web app provides summarized, real-time news updates using advanced transformer models.",
+      "",
+      "Key Features:",
+      "- Transformer-based NLP news summarization",
+      "- Real-time news updates via News API",
+      "- Secure OTP login system + password hashing",
+      "- Personalized feed with saved article collections",
+      "- Topic-based news categorization",
+      "- Tailwind CSS + JavaScript responsive UI",
+      "- Fast, secure Flask backend API",
+    ].join("\n"),
+    tags: ["NLP", "Transformers", "Flask", "Tailwind", "JavaScript"],
     link: "https://github.com/yourrepo",
     demo: "#",
   },

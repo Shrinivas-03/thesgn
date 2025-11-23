@@ -2,7 +2,7 @@ import Link from "next/link";
 import { client } from "@/sanity/lib/client";
 
 export const metadata = {
-  title: "Blog — Buddy",
+  title: "thesgn - Blog's ",
   description: "Read articles on software development, AI, cloud, and more.",
 };
 
@@ -33,27 +33,27 @@ async function getPosts(search) {
 }
 
 export default async function BlogPage({ searchParams }) {
-  const search = searchParams.search || "";
+  // 🔥 FIX: unwrap Promise for Turbopack
+  const resolvedParams = await Promise.resolve(searchParams);
+  const search = resolvedParams.search || "";
+
   const posts = await getPosts(search);
 
   return (
     <div className="min-h-screen py-16 px-6 bg-slate-900 text-white">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
         <h1 className="text-4xl md:text-5xl font-bold mb-10">
           Blog {search && `— Searching for "${search}"`}
         </h1>
 
-        {/* No results */}
         {posts.length === 0 && (
           <p className="text-gray-400 text-lg">
             No blogs found for <strong>{search}</strong>.
           </p>
         )}
 
-        {/* Posts Grid */}
         <div className="grid md:grid-cols-2 gap-8">
-          {posts.map((post, index) => (
+          {posts.map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
@@ -76,7 +76,6 @@ export default async function BlogPage({ searchParams }) {
                 {new Date(post.publishedAt).toLocaleDateString()}
               </p>
 
-              {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-4">
                 {post.categories?.map((cat, i) => (
                   <span
@@ -89,7 +88,7 @@ export default async function BlogPage({ searchParams }) {
               </div>
 
               <p className="text-gray-300 line-clamp-3">
-                {post.body[0]?.children?.[0]?.text ||
+                {post.body?.[0]?.children?.[0]?.text ||
                   "No description available."}
               </p>
             </Link>

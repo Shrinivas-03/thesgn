@@ -52,9 +52,7 @@ export default function Newsletter() {
     <section className="w-full py-12 bg-gradient-to-r from-[#071425] via-[#07182f] to-[#061220] text-white">
       <div className="max-w-3xl mx-auto px-6">
         <div className="bg-slate-900/60 backdrop-blur-md p-8 rounded-2xl border border-slate-700">
-          <h3 className="text-2xl font-bold mb-2">
-            Subscribe to my newsletter
-          </h3>
+          <h3 className="text-2xl font-bold mb-2">Subscribe to my Blog</h3>
           <p className="text-gray-400 mb-4">
             Get occasional updates about projects, blog posts, and resources.
           </p>
