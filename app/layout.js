@@ -21,7 +21,22 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
       <head>
-        {/* MDX Styling */}
+        {/* ⭐ GOOGLE ANALYTICS */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-2G0QGEZJ0Y"
+        />
+
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-2G0QGEZJ0Y');
+          `}
+        </Script>
+
+        {/* ⭐ MDX Styling */}
         <style
           dangerouslySetInnerHTML={{
             __html: `
@@ -34,7 +49,7 @@ export default function RootLayout({ children }) {
           }}
         />
 
-        {/* AOS CSS */}
+        {/* ⭐ AOS CSS */}
         <link
           href="https://unpkg.com/aos@2.3.1/dist/aos.css"
           rel="stylesheet"
@@ -42,15 +57,16 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className={`${geist.variable} bg-slate-900 text-white`}>
-        {/* Tailwind */}
+        {/* ⭐ Tailwind CDN */}
         <Script
           src="https://cdn.tailwindcss.com"
           strategy="beforeInteractive"
         />
 
-        {/* Initialize AOS on CLIENT ONLY */}
+        {/* ⭐ AOS Init */}
         <AOSInit />
 
+        {/* Navigation + Children + Footer */}
         <Navbar />
         <main className="mt-4">{children}</main>
         <Footer />
