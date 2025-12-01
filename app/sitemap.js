@@ -41,5 +41,9 @@ export default async function sitemap() {
       url: `${baseUrl}/blog/comet`,
       lastModified: new Date(),
     },
+    {
+      url: `${baseUrl}/blog/vscode_zed`,
+      lastModified: new Date(),
+    },
   ];
 }
