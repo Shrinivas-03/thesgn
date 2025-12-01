@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
 
+# Block Next.js internals (optional, safe)
+Disallow: /_next/static/
+Disallow: /_next/image/
+
+# Block API routes if not public
+Disallow: /api/
+
+# Declare your sitemap
 Sitemap: https://www.thesgn.blog/sitemap.xml

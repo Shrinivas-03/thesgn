@@ -10,10 +10,14 @@ const geist = Geist({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://www.thesgn.blog"),
   title: "Shrinivas Nadager",
   description: "Portfolio + Blogs",
   icons: {
     icon: "/me.png",
+  },
+  alternates: {
+    canonical: "https://www.thesgn.blog/",
   },
 };
 
