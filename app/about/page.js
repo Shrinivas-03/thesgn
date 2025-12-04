@@ -16,14 +16,26 @@ export default function AboutPage() {
             <span className="text-white font-semibold">
               Shrinivas Gopal Nadager
             </span>
-            , founder of Codemates Ltd, and a passionate developer experienced
-            in web apps, AI systems, cloud computing, and building solutions
-            that matter.
+            , Founder of{" "}
+            <a
+              href="https://codemates.in"
+              target="_blank"
+              className="text-cyan-400 underline"
+            >
+              Codemates Ltd
+            </a>
+            , and a Full-Stack AI Developer building modern web applications,
+            scalable AI systems, automation workflows, and cloud-powered
+            solutions.
           </p>
 
           <p className="text-gray-400 mt-4 leading-relaxed">
-            I love solving real-world problems with clean engineering and modern
-            tools.
+            Our private tech solutions firm has successfully delivered{" "}
+            <span className="text-white font-semibold">
+              10+ real-world projects
+            </span>{" "}
+            across companies, students, and startups throughout India — with a
+            focus on reliability, performance, and clean engineering.
           </p>
         </div>
 
@@ -106,12 +118,26 @@ export default function AboutPage() {
 
         <div className="space-y-8 border-l border-slate-700 pl-6">
           <div data-aos="fade-up">
-            <h3 className="text-xl font-semibold">Founder — Codemates Ltd</h3>
+            <h3 className="text-xl font-semibold">
+              Founder (CEO) & Full-Stack AI Developer — Codemates Ltd
+            </h3>
             <p className="text-gray-400 text-sm">2025 – Present</p>
             <p className="text-gray-300 mt-1">
-              Running a tech agency building modern websites, AI tools,
-              automation, and full-stack solutions.
+              Leading a private tech solutions firm delivering full-stack
+              systems, automation tools, AI-driven applications, and
+              high-performance web platforms. Successfully delivered{" "}
+              <span className="text-white font-semibold">10+ projects</span>{" "}
+              across industries with a strong focus on engineering precision,
+              security, and seamless user experience.
             </p>
+
+            <a
+              href="https://codemates.in"
+              target="_blank"
+              className="text-cyan-400 underline mt-2 inline-block"
+            >
+              Visit Codemates Ltd →
+            </a>
           </div>
         </div>
       </section>
@@ -124,7 +150,7 @@ export default function AboutPage() {
         </p>
 
         <a
-          href="/resume.pdf" // put file inside /public folder
+          href="/resume.pdf"
           download
           className="px-8 py-3 bg-cyan-600 hover:bg-cyan-500 rounded-full font-semibold transition"
         >
