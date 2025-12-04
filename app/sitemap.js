@@ -49,5 +49,9 @@ export default async function sitemap() {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
     },
+    {
+      url: `${baseUrl}/blog/ss`,
+      lastModified: new Date(),
+    },
   ];
 }
