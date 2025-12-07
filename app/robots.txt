@@ -1,12 +1,18 @@
 User-agent: *
 Allow: /
 
-# Block Next.js internals (optional, safe)
-Disallow: /_next/static/
-Disallow: /_next/image/
+# Block Next.js internals (recommended)
+Disallow: /_next/
+Disallow: /static/
 
-# Block API routes if not public
+# Block non-public API routes
 Disallow: /api/
 
-# Declare your sitemap
+# Optional: block preview mode (if using Next.js preview)
+Disallow: /api/preview/
+
+# Optional: block draft Sanity routes if you have any
+Disallow: /draft/
+
+# Sitemap declaration
 Sitemap: https://www.thesgn.blog/sitemap.xml

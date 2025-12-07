@@ -53,5 +53,9 @@ export default async function sitemap() {
       url: `${baseUrl}/blog/ss`,
       lastModified: new Date(),
     },
+    {
+      url: `${baseUrl}/blog/CRM_solutions_for_business`,
+      lastModified: new Date(),
+    },
   ];
 }
