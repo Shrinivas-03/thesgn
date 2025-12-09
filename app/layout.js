@@ -1,5 +1,8 @@
+"use client"; // important for service worker registration
+
 import { Geist } from "next/font/google";
 import Script from "next/script";
+import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import AOSInit from "./components/AOSInit";
@@ -12,7 +15,7 @@ const geist = Geist({
 export const metadata = {
   metadataBase: new URL("https://www.thesgn.blog"),
   title: "Shrinivas Nadager",
-  description: "Portfolio + Blogs",
+  description: "Portfolio and Tech Blogs",
   icons: {
     icon: "/me.png",
   },
@@ -22,6 +25,16 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  // ⭐ Register Moneytag Service Worker
+  useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("/sw.js")
+        .then(() => console.log("Moneytag Service Worker Registered"))
+        .catch((err) => console.error("Moneytag SW registration failed:", err));
+    }
+  }, []);
+
   return (
     <html lang="en" className="dark">
       <head>
@@ -70,7 +83,7 @@ export default function RootLayout({ children }) {
         {/* ⭐ AOS Init */}
         <AOSInit />
 
-        {/* Navigation + Children + Footer */}
+        {/* Layout Sections */}
         <Navbar />
         <main className="mt-4">{children}</main>
         <Footer />
