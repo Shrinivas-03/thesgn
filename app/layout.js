@@ -41,6 +41,13 @@ export default function RootLayout({ children }) {
           `}
         </Script>
 
+        {/* ⭐ PUSH NOTIFICATION ADS (3nbf4.com) */}
+        <Script
+          src="https://3nbf4.com/act/files/tag.min.js?z=10298162"
+          data-cfasync="false"
+          async
+        />
+
         {/* ⭐ MDX Styling */}
         <style
           dangerouslySetInnerHTML={{
