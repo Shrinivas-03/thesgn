@@ -1,11 +1,9 @@
-"use client"; // important for service worker registration
-
 import { Geist } from "next/font/google";
 import Script from "next/script";
-import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import AOSInit from "./components/AOSInit";
+import ServiceWorkerRegister from "./components/ServiceWorkerRegister";
 
 const geist = Geist({
   variable: "--font-geist",
@@ -25,16 +23,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  // ⭐ Register Moneytag Service Worker
-  useEffect(() => {
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker
-        .register("/sw.js")
-        .then(() => console.log("Moneytag Service Worker Registered"))
-        .catch((err) => console.error("Moneytag SW registration failed:", err));
-    }
-  }, []);
-
   return (
     <html lang="en" className="dark">
       <head>
@@ -82,6 +70,9 @@ export default function RootLayout({ children }) {
 
         {/* ⭐ AOS Init */}
         <AOSInit />
+
+        {/* ⭐ Register Moneytag Service Worker */}
+        <ServiceWorkerRegister />
 
         {/* Layout Sections */}
         <Navbar />
