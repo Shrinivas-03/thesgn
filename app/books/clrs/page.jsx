@@ -1,6 +1,7 @@
 "use client";
 
 import PopUnder from "@/app/components/PopUnder";
+import NativeInterstitial from "@/app/components/NativeInterstitial";
 
 export default function CLRSPage() {
   return (
@@ -14,17 +15,17 @@ export default function CLRSPage() {
       <p className="text-lg opacity-80 mb-8">
         CLRS is the most complete DSA book used in engineering colleges
         worldwide. Covers algorithms, data structures, complexity analysis, and
-        problem-solving. Best for 3rd–6th semester students.
+        problem-solving.
       </p>
 
-      <button
-        onClick={() => {
-          window.location.href = "/books/algo.pdf";
-        }}
-        className="bg-red-600 hover:bg-red-700 transition text-white px-6 py-3 rounded-lg"
+      {/* ⭐ Trigger Interstitial Ad + Then Download */}
+      <NativeInterstitial
+        onClick={() => window.open("/books/algo.pdf", "_blank")}
       >
-        Download CLRS PDF
-      </button>
+        <button className="bg-red-600 hover:bg-red-700 transition text-white px-6 py-3 rounded-lg">
+          Download CLRS PDF
+        </button>
+      </NativeInterstitial>
     </div>
   );
 }

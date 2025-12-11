@@ -1,10 +1,12 @@
 "use client";
 
 import PopUnder from "@/app/components/PopUnder";
+import NativeInterstitial from "@/app/components/NativeInterstitial";
 
 export default function SREPage() {
   return (
     <div className="max-w-3xl mx-auto py-20 px-6">
+      {/* ⭐ PopUnder loads automatically */}
       <PopUnder />
 
       <h1 className="text-4xl font-bold mb-6">
@@ -17,14 +19,14 @@ export default function SREPage() {
         DevOps. Perfect for backend, cloud, and DevOps aspirants.
       </p>
 
-      <button
-        onClick={() => {
-          window.location.href = "/books/sre.pdf";
-        }}
-        className="bg-teal-600 hover:bg-teal-700 transition text-white px-6 py-3 rounded-lg"
+      {/* ⭐ Interstitial → then PDF */}
+      <NativeInterstitial
+        onClick={() => window.open("/books/sre.pdf", "_blank")}
       >
-        Download SRE Book PDF
-      </button>
+        <button className="bg-teal-600 hover:bg-teal-700 transition text-white px-6 py-3 rounded-lg">
+          Download SRE Book PDF
+        </button>
+      </NativeInterstitial>
     </div>
   );
 }
