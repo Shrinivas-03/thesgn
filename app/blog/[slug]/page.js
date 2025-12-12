@@ -1,7 +1,6 @@
 import { client } from "@/sanity/lib/client";
 import { PortableText } from "@portabletext/react";
 import { PortableTextComponents } from "@/app/components/PortableTextComponents";
-import InPagePushAd from "@/app/components/InPagePushAd";
 
 // -------------------------------------------------
 // STEP 4: ADD SEO METADATA
@@ -128,9 +127,6 @@ export default async function BlogPostPage({ params }) {
         />
       )}
 
-      {/* ⭐ In-Page Push Ad (before content) */}
-      <InPagePushAd />
-
       {/* ⭐ Breadcrumb JSON-LD */}
       <script
         type="application/ld+json"
@@ -165,7 +161,6 @@ export default async function BlogPostPage({ params }) {
       <PortableText value={post.body} components={PortableTextComponents} />
 
       {/* ⭐ In-Page Push Ad (after content) */}
-      <InPagePushAd />
     </article>
   );
 }
