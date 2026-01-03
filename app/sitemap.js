@@ -65,5 +65,9 @@ export default async function sitemap() {
       url: `${baseUrl}/blog/coding2026`,
       lastModified: new Date(),
     },
+    {
+      url: `${baseUrl}/blog/upi`,
+      lastModified: new Date(),
+    },
   ];
 }
