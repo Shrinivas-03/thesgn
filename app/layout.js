@@ -15,7 +15,9 @@ export const metadata = {
   title: "Shrinivas Nadager",
   description: "Portfolio and Tech Blogs",
   icons: {
-    icon: "/me.png",
+    icon: "/me.png", // standard favicon
+    shortcut: "/me.png", // fallback for older browsers
+    apple: "/me.png", // for iOS home-screen icon
   },
   alternates: {
     canonical: "https://www.thesgn.blog/",
