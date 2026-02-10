@@ -77,5 +77,9 @@ export default async function sitemap() {
       url: `${baseUrl}/blog/Gsoc2026`,
       lastModified: new Date(),
     },
+    {
+      url: `${baseUrl}/blog/layoff`,
+      lastModified: new Date(),
+    },
   ];
 }
