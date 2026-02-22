@@ -81,5 +81,9 @@ export default async function sitemap() {
       url: `${baseUrl}/blog/layoff`,
       lastModified: new Date(),
     },
+    {
+      url: `${baseUrl}/blog/summit`,
+      lastModified: new Date(),
+    },
   ];
 }
