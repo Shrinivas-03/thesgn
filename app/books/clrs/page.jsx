@@ -1,13 +1,10 @@
 "use client";
 
-import PopUnder from "@/app/components/PopUnder";
-import NativeInterstitial from "@/app/components/NativeInterstitial";
+
 
 export default function CLRSPage() {
   return (
     <div className="max-w-3xl mx-auto py-20 px-6">
-      <PopUnder />
-
       <h1 className="text-4xl font-bold mb-6">
         Introduction to Algorithms (CLRS) – PDF Download
       </h1>
@@ -18,14 +15,12 @@ export default function CLRSPage() {
         problem-solving.
       </p>
 
-      {/* ⭐ Trigger Interstitial Ad + Then Download */}
-      <NativeInterstitial
+      <button
         onClick={() => window.open("/books/algo.pdf", "_blank")}
+        className="bg-red-600 hover:bg-red-700 transition text-white px-6 py-3 rounded-lg"
       >
-        <button className="bg-red-600 hover:bg-red-700 transition text-white px-6 py-3 rounded-lg">
-          Download CLRS PDF
-        </button>
-      </NativeInterstitial>
+        Download CLRS PDF
+      </button>
     </div>
   );
 }

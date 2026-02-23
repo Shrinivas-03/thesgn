@@ -1,14 +1,10 @@
 "use client";
 
-import PopUnder from "@/app/components/PopUnder";
-import NativeInterstitial from "@/app/components/NativeInterstitial";
+
 
 export default function DDIAPage() {
   return (
     <div className="max-w-3xl mx-auto py-20 px-6">
-      {/* ⭐ PopUnder loads when page loads */}
-      <PopUnder />
-
       <h1 className="text-4xl font-bold mb-6">
         Design Patterns – PDF Download
       </h1>
@@ -22,14 +18,12 @@ export default function DDIAPage() {
         preparation, and developers who want to level up architecture skills.
       </p>
 
-      {/* ⭐ Interstitial triggers on click, then download starts */}
-      <NativeInterstitial
+      <button
         onClick={() => window.open("/books/design.pdf", "_blank")}
+        className="bg-purple-600 hover:bg-purple-700 transition text-white px-6 py-3 rounded-lg"
       >
-        <button className="bg-purple-600 hover:bg-purple-700 transition text-white px-6 py-3 rounded-lg">
-          Download Design Patterns PDF
-        </button>
-      </NativeInterstitial>
+        Download Design Patterns PDF
+      </button>
     </div>
   );
 }

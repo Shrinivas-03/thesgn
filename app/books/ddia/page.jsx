@@ -1,14 +1,10 @@
 "use client";
 
-import PopUnder from "@/app/components/PopUnder";
-import NativeInterstitial from "@/app/components/NativeInterstitial";
+
 
 export default function DDIAPage() {
   return (
     <div className="max-w-3xl mx-auto py-20 px-6">
-      {/* ⭐ PopUnder loads on page enter */}
-      <PopUnder />
-
       <h1 className="text-4xl font-bold mb-6">
         Designing Data-Intensive Applications (DDIA) – PDF Download
       </h1>
@@ -20,14 +16,12 @@ export default function DDIAPage() {
         design.
       </p>
 
-      {/* ⭐ Interstitial triggers when clicked, THEN download begins */}
-      <NativeInterstitial
+      <button
         onClick={() => window.open("/books/data.pdf", "_blank")}
+        className="bg-purple-600 hover:bg-purple-700 transition text-white px-6 py-3 rounded-lg"
       >
-        <button className="bg-purple-600 hover:bg-purple-700 transition text-white px-6 py-3 rounded-lg">
-          Download DDIA PDF
-        </button>
-      </NativeInterstitial>
+        Download DDIA PDF
+      </button>
     </div>
   );
 }

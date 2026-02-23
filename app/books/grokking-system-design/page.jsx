@@ -1,14 +1,10 @@
 "use client";
 
-import PopUnder from "@/app/components/PopUnder";
-import NativeInterstitial from "@/app/components/NativeInterstitial";
+
 
 export default function GrokkingSystemDesignPage() {
   return (
     <div className="max-w-3xl mx-auto py-20 px-6">
-      {/* ⭐ PopUnder loads automatically when page opens */}
-      <PopUnder />
-
       <h1 className="text-4xl font-bold mb-6">
         Grokking System Design – PDF Download
       </h1>
@@ -19,14 +15,12 @@ export default function GrokkingSystemDesignPage() {
         internship preparation and FAANG interviews.
       </p>
 
-      {/* ⭐ Interstitial triggers → then PDF opens */}
-      <NativeInterstitial
+      <button
         onClick={() => window.open("/books/grok.pdf", "_blank")}
+        className="bg-green-600 hover:bg-green-700 transition text-white px-6 py-3 rounded-lg"
       >
-        <button className="bg-green-600 hover:bg-green-700 transition text-white px-6 py-3 rounded-lg">
-          Download Grokking System Design PDF
-        </button>
-      </NativeInterstitial>
+        Download Grokking System Design PDF
+      </button>
     </div>
   );
 }

@@ -3,7 +3,6 @@ import Script from "next/script";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import AOSInit from "./components/AOSInit";
-import ServiceWorkerRegister from "./components/ServiceWorkerRegister";
 
 const geist = Geist({
   variable: "--font-geist",
@@ -43,12 +42,7 @@ export default function RootLayout({ children }) {
           `}
         </Script>
 
-        {/* ⭐ PUSH NOTIFICATION ADS (3nbf4.com) */}
-        <Script
-          src="https://3nbf4.com/act/files/tag.min.js?z=10298162"
-          data-cfasync="false"
-          async
-        />
+
 
         {/* ⭐ MDX Styling */}
         <style
@@ -80,8 +74,7 @@ export default function RootLayout({ children }) {
         {/* ⭐ AOS Init */}
         <AOSInit />
 
-        {/* ⭐ Register Moneytag Service Worker */}
-        <ServiceWorkerRegister />
+
 
         {/* Layout Sections */}
         <Navbar />

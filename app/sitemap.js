@@ -34,6 +34,18 @@ export default async function sitemap() {
       lastModified: new Date(),
     },
     {
+      url: `${baseUrl}/privacy-policy`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/terms-and-conditions`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/disclaimer`,
+      lastModified: new Date(),
+    },
+    {
       url: `${baseUrl}/blog/are-we-in-an-ai-bubble-nov-2025`,
       lastModified: new Date(),
     },

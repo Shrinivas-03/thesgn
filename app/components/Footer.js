@@ -64,8 +64,15 @@ export default function Footer() {
           </div>
         </div>
 
+        <div className="flex flex-wrap justify-center gap-6 mt-10 text-sm">
+          <a href="/contact" className="hover:text-cyan-400 transition">Contact Us</a>
+          <a href="/privacy-policy" className="hover:text-cyan-400 transition">Privacy Policy</a>
+          <a href="/terms-and-conditions" className="hover:text-cyan-400 transition">Terms & Conditions</a>
+          <a href="/disclaimer" className="hover:text-cyan-400 transition">Disclaimer</a>
+        </div>
+
         {/* Divider */}
-        <div className="border-t border-slate-800 mt-10 pt-4 text-center text-gray-500 text-sm">
+        <div className="border-t border-slate-800 mt-6 pt-4 text-center text-gray-500 text-sm">
           © {new Date().getFullYear()} SGN. All rights reserved.
         </div>
       </div>
